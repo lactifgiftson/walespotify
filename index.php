@@ -15,20 +15,17 @@ include ('site-guard.php');
 		<script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script>
 
-		
 		<meta property="og:url" content="http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/images/walelogo.png" />
 		<meta property="og:title" content="Wale playlist generator"/>
 		<meta property="og:description" content="Create your own Wale playlist generator" />
-		
+
 		<meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@wale">
-        <meta name="twitter:description" content="Create your own Wale playlist generator">
-        <meta name="twitter:text:title" content="Wale playlist generator">
-        <meta name="twitter:image" content="https://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/images/walelogo.png">
-		
-		
+		<meta name="twitter:site" content="@wale">
+		<meta name="twitter:description" content="Create your own Wale playlist generator">
+		<meta name="twitter:text:title" content="Wale playlist generator">
+		<meta name="twitter:image" content="https://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/images/walelogo.png">
 
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
@@ -213,7 +210,10 @@ include ('site-guard.php');
 										<div class="title">
 											DOWNLOAD
 										</div>
-										<canvas id="myCanvas" width="300" height="300"></canvas>
+										<div class="canvas-wrap">
+											<canvas id="myCanvas" width="300" height="300"></canvas>
+											<a download="FinalPlaylistCover.jpeg" target="_blank" href="" class="download-button" id="download-final-image"></a>
+										</div>
 									</div>
 									<div class="share-wrapper">
 										<div class="title">
