@@ -823,4 +823,195 @@ div#page3 .right-wrapper, div#page4 .right-wrapper {
 	div#page2 .pagedesc {
 		margin-bottom: 47px;
 	}
+    .left-wrapper,
+    .right-wrapper,
+    #page1 .right-wrapper {
+        width: 100%;
+        display: block;
+    }
+    .full-wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    .audioWrap {
+        margin: 0 auto;
+        max-width: 459px;
+        text-align: center;
+    }
+    div#page3 .right-wrapper,
+    div#page4 .right-wrapper {
+        margin: 0 auto;
+    }
+    div#seekObjContainer {
+        width: calc(100% - 125px);
+    }
+    .search-wrapper input.search {
+        /* max-width: 320px; */
+        margin: 0 auto;
+        width: 100%;
+    }
+    .searchbox .dummy {
+        width: 100%;
+        margin: 0 auto;
+        /* margin-left: 0; */
+        max-width: 405px;
+    }
+    .footer-wrapper span.contact-content {
+        display: block;
+    }
+    #page3 .socialWrap>* {
+        width: 100%;
+        display: block;
+    }
+    .separator.mob {
+        display: none;
+    }
+    /** day2 styles **/
+    div#login-form {
+        font-size: 32px;
+    }
+    div#page1 .description p {
+        font-size: 14px;
+    }
+    .footer-wrapper {
+        font-size: 9px;
+    }
+    span.seperator {
+        font-size: 9px;
+    }
+    span.seperator.mob {
+        display: none;
+    }
+    div#page2 .pagedesc {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    #page2 .playlist-wrapper .playlist .playlist-content {
+        font-size: 16px;
+    }
+    #page2 .playlist-wrapper .playlist {
+        text-align: left;
+    }
+    #page2 .saveplaylistbtn {
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .search-wrapper input.search {
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        background: #fff;
+    }
+    .searchbox .dummy a:after {
+        /* width: 20px;
+        height: 20px; */
+        right: 4px;
+        top: 10px;
+        background-size: 95%;
+    }
+    .searchbox .dummy a:hover:after {
+        /* width: 25px;
+        height: 25px; */
+        right: 4px;
+        top: 10px;
+        background-size: 95%;
+    }
+    #page1 .loginbtn a,
+    #page2 .saveplaylistbtn a,
+    #page4 .createplaylistbtn a {
+        font-size: 18px;
+    }
+    #page2 .logo-wrapper img,
+    #page3 .logo-wrapper img,
+    #page4 .logo-wrapper img {
+        width: 65%;
+    }
+    #page3 .pagedesc,
+    #page4 .pagedesc {
+        font-size: 20px;
+        margin: 35px 0;
+    }
+    #page3 .socialWrap>* {
+        font-size: 22px;
+    }
+    #page3 .socialWrap a {
+        padding: 12px;
+        font-size: 30px;
+    }
+    div.logo-wrapper {
+        margin-top: 20px;
+    }
+    #page3 .socialWrap .share-wrapper {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .close-list {
+        float: right;
+        display: inline-block;
+        font-size: 20px;
+        letter-spacing: 0;
+        width: 20px;
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width:767px) {
+    div.officialrules {
+        max-width: 320px;
+        width: 90%;
+    }
+    #song-playing .song-title {
+        font-size: 12px;
+        padding-top: 10px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%)translateY(-170%);
+        /* transform: translateY(-10%); */
+    }
+    #page2 small.start-time,
+    #page2 small.end-time {
+        font-size: 8.81px;
+    }
+    #page2 .playlist-wrapper .playlist .menuicon {
+        width: 10%;
+    }
+    #page2 .playlist-wrapper .playlist .playlist-content {
+        width: 86%;
+    }
+    #page2 .playlist-wrapper .playlist {
+        font-size: 0;
+    }
+    div#song-playing {
+        position: relative;
+    }
+    div#seekObjContainer {
+        position: relative;
+    }
+}
+
+@media all and (max-width:767px) and (orientation:landscape) {
+    #page2 .playlist-wrapper .playlist .playlist-content {
+        margin-left: 0;
+    }
+}
+
+@media all and (max-width:320px) {
+    div#page2 .pagedesc {
+        margin-bottom: 47px;
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1024px) and (orientation:landscape) {
+    #page3 .socialWrap .share-wrapper {
+        margin-top: 30px;
+    }
+    #page3 .socialWrap>* {
+        display: block;
+        width: 100%;
+    }
+    #page3 .socialWrap .share-wrapper {
+        margin: 25px 0;
+    }
 }
