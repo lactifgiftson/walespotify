@@ -1,6 +1,5 @@
 <?php
 include('site-guard.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -492,7 +492,8 @@ div#page3 .right-wrapper,div#page4 .right-wrapper{
 	.searchbox .dummy {
 		width: 95%;
 		margin: 0 auto;
-		margin-left: 0;
+		/* margin-left: 0; */
+		max-width: 405px
 	}
 	.footer-wrapper span.contact-content {
 		display: block;
@@ -503,6 +504,90 @@ div#page3 .right-wrapper,div#page4 .right-wrapper{
 	}
 	.separator.mob{
 		display:none;
+	}
+	
+	/** day2 styles **/
+	div#login-form {
+		font-size: 32px;
+	}
+
+	div#page1 .description p {
+		font-size: 14px;
+	}
+
+	.footer-wrapper {
+		font-size: 9px;
+	}
+
+	span.seperator {
+		font-size: 9px;
+	}
+
+	span.seperator.mob {
+		display: none;
+	}
+
+	div#page2 .pagedesc {
+		font-size: 22px;
+		margin-top: 30px;
+	}
+
+	#page2 .playlist-wrapper .playlist .playlist-content {
+		font-size: 16px;
+	}
+
+	#page2 .playlist-wrapper .playlist {
+		text-align: center;
+	}
+
+	#page2 .saveplaylistbtn {
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+
+	.search-wrapper input.search {
+		height: 30px;
+		line-height: 30px;
+		font-size: 14px;
+	}
+	.searchbox .dummy a:after{
+		width: 20px;
+		height: 20px;
+		right: 4px;
+		top: 10px;
+		background-size: 95%;
+	}
+	.searchbox .dummy a:hover:after{
+		width: 25px;
+		height: 25px;
+		right: 4px;
+		top: 10px;
+		background-size: 95%;
+	}
+
+	#page1 .loginbtn a, #page2 .saveplaylistbtn a, #page4 .createplaylistbtn a {
+		font-size: 18px;
+		
+	}
+
+	#page2 .logo-wrapper img, #page3 .logo-wrapper img, #page4 .logo-wrapper img {
+		width: 65%;
+	}
+
+	#page3 .pagedesc, #page4 .pagedesc {
+		font-size: 20px;
+		margin: 35px 0;
+	}
+
+	#page3 .socialWrap > * {
+		font-size: 22px;
+	}
+	#page3 .socialWrap a {
+		padding: 12px;
+		font-size: 30px;
+	}
+	div.logo-wrapper {
+		margin-top: 20px;
 	}
 
 }
