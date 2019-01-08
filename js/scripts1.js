@@ -1,4 +1,6 @@
 /** share scripts **/
+var baseURL = "http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/";
+
 window.fbAsyncInit = function() {
 		// init the FB JS SDK
 		FB.init({
@@ -25,16 +27,16 @@ window.fbAsyncInit = function() {
 		
 function postfeed() {
 		event.preventDefault();
-		var path = window.location;
-		var fullPath = path.origin + path.pathname;
-		console.log(fullPath);
+		//var path = window.location;
+		//var fullPath = path.origin + path.pathname;
+		//console.log(fullPath);
         var customtitle = "Create a new Wale Playlist";
-        var ogimg = fullPath+"/images/walelogo.png";
+        var ogimg = baseURL+"images/walelogo.png";
         var obj = {
 			app_id : "407045793367858",
             method: "feed",
 			picture : ogimg,
-			link: fullPath+"/share.php/?cache", 
+			link: baseURL+"share.php?cache", 
 			name: customtitle,
             description: customtitle,
 			display: "popup"  
@@ -73,9 +75,11 @@ function postfeed() {
 
     jQuery('#page3 .socialWrap a.tw').attr('href', twitterURL);*/
 
+TwshareURL = baseURL + "share.php?cache"
+twitterShare();
 function twitterShare() {
-    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Bryce Vine setlist.") + '&url=' + encodeURIComponent(TwshareURL);
-    jQuery("a.tw").attr("href", href);
+    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
+    jQuery("#page3 .socialWrap a.tw").attr("href", href);
 }
 /** common scripts **/
 
