@@ -1,5 +1,6 @@
 <?php
 include('site-guard.php');
+$pid = $_GET["pid"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +55,7 @@ include('site-guard.php');
 							<div class="playlistContainerWrap">
 
 								<div id="playlist-container">
-									<iframe src="https://embed.spotify.com/?uri=spotify:user:abinll:playlist:2kDCTALPxrao9IXYNOgnXh" width="100%" height="532" frameborder="0" allowtransparency="true"></iframe>
+									<iframe src="https://embed.spotify.com/?uri=spotify:playlist:<?php echo $pid ?>" width="100%" height="532" frameborder="0" allowtransparency="true"></iframe>
 								</div>
 
 								<div class="createwrapper">

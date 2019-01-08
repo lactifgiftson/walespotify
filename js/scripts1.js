@@ -1,6 +1,10 @@
 var credentials = null;
 var MaxTracks = 10;
 var wholeTrackData = {};
+var pid="";
+var TwshareURL = "";
+var FBshareURL="";
+var FBshareURL1="";
 wholeTrackData["4ZiwTg2KE4ejWWQRFg0u3U"] = {
 	"albumname" : "Strip Club Musik",
 	"artist" : "Dopetrackz",
@@ -27,7 +31,6 @@ function getTime() {
 	return Math.round(new Date().getTime() / 1000);
 }
 
-
 function callSpotify(url, data) {
 	return $.ajax(url, {
 		dataType : 'json',
@@ -38,35 +41,36 @@ function callSpotify(url, data) {
 	});
 }
 
-	// Load the SDK asynchronously
-	( function(d, s, id) {
-			var js,
-			    fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {
-				return;
-			}
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//connect.facebook.net/en_US/all.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk')); 
-		
-function postfeed() {
-		event.preventDefault();
-		//var path = window.location;
-		//var fullPath = path.origin + path.pathname;
-		//console.log(fullPath);
-        var customtitle = "Create a new Wale Playlist";
-        var ogimg = baseURL+"images/walelogo.png";
-        var obj = {
-			app_id : "407045793367858",
-            method: "feed",
-			picture : ogimg,
-			link: baseURL+"share.php?cache", 
-			name: customtitle,
-            description: customtitle,
-			display: "popup"  
-        };
+// Load the SDK asynchronously
+( function(d, s, id) {
+		var js,
+		    fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {
+			return;
+		}
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+function postfeed(pid) {
+	event.preventDefault();
+	//var path = window.location;
+	//var fullPath = path.origin + path.pathname;
+	//console.log(fullPath);
+	var customtitle = "Create a new Wale Playlist";
+	var ogimg = baseURL + "images/walelogo.png";
+	var obj = {
+		app_id : "407045793367858",
+		method : "feed",
+		picture : ogimg,
+		link : FBshareURL,
+		name : customtitle,
+		description : customtitle,
+		display : "popup"
+	};
+}
 
 function millisToMinutesAndSeconds(millis) {
 	var minutes = Math.floor(millis / 60000);
@@ -148,7 +152,7 @@ function addItem() {
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
-function postfeed() {
+function postfeed(pid) {
 	event.preventDefault();
 	var path = window.location;
 	var fullPath = path.origin + path.pathname;
@@ -159,7 +163,7 @@ function postfeed() {
 		app_id : "407045793367858",
 		method : "feed",
 		picture : ogimg,
-		link : fullPath + "/share.php/?cache",
+		link : fullPath+FBshareURL1,
 		name : customtitle,
 		description : customtitle,
 		display : "popup"
@@ -196,14 +200,14 @@ function postfeed() {
 
  jQuery('#page3 .socialWrap a.tw').attr('href', twitterURL);*/
 
-TwshareURL = baseURL + "share.php?cache"
-twitterShare();
+
+
 function twitterShare() {
 
 	var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Bryce Vine setlist.") + '&url=' + encodeURIComponent(TwshareURL);
 	jQuery("a.tw").attr("href", href);
-    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
-    jQuery("#page3 .socialWrap a.tw").attr("href", href);
+	var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
+	jQuery("#page3 .socialWrap a.tw").attr("href", href);
 }
 
 /** common scripts **/
@@ -625,6 +629,13 @@ function savePlaylist() {
 			$("#page-three").css("visibility", "hidden");
 			$(".ajax-load").show();
 			setTimeout(function() {
+				pid = playlist.id;
+				jQuery(".share-wrapper").attr("rel",pid);
+				TwshareURL = baseURL + "share.php?pid="+jQuery(".share-wrapper").attr("rel");
+				FBshareURL = baseURL + "share.php?pid="+jQuery(".share-wrapper").attr("rel"),
+				FBshareURL1 = "/share.php/pid="+jQuery(".share-wrapper").attr("rel");
+				
+				twitterShare();
 				$("#page3 #playlist-container iframe").attr("src", "https://open.spotify.com/embed/playlist/" + playlist.id);
 			}, 5000);
 			setTimeout(function() {
@@ -828,4 +839,4 @@ jQuery(document).ready(function() {
 		generatePlaylistForSpotify();
 		savePlaylistToSpotify();
 	});
-});
+}); 
