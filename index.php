@@ -1,6 +1,5 @@
 <?php
-include('site-guard.php');
-
+include ('site-guard.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +9,14 @@ include('site-guard.php');
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
+		<script src="lib/jquery-1.11.1.min.js"></script>
+		<script src="lib/bootstrap.min.js"></script>
+		<script src="lib/underscore-min.js"></script>
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
 		<link type="text/css" href="css/style2.css?d" rel="stylesheet" />
-		
+
 		<title>Wale Spotify Playlist Gen</title>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -29,6 +30,11 @@ include('site-guard.php');
 		<script src="https://oss.maxcd	n.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+		<script src="http://setlist.brycevine.com/js/jquery.ui.touch-punch.min.js"></script>
+		<link href="css/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.flexdatalist.min.js"></script>
 	</head>
 	<body class="page1">
 		<div id="content-wrapper">
@@ -103,44 +109,52 @@ include('site-guard.php');
 								<div id="timeline">
 									<div id="seekObj" class="playhead" style=""></div>
 								</div>
+								<div id="song-playing" class="song-playing"></div>
+								<small class="start-time">0:00</small><small class="end-time">0:00</small>
 								<!--small class="start-time">0:23</small><small class="end-time">0:30</small-->
 							</div>
 						</div>
 						<div class="search-wrapper">
 							<div class="searchbox">
 								<div class="dummy">
-									<input class="search" placeholder="Search">
+									<input id="" type='text'
+									value = "4ZiwTg2KE4ejWWQRFg0u3U"
+									placeholder=""
+									class='flexdatalist mdl-textfield mdl-js-textfield mdl-textfield--floating-label search'
+									data-min-length='1'
+									multiple='multiple'
+									list='myplaylist'
+									name='language12'>
+
 									<a href="javascript:void(0)"></a>
 								</div>
+								<datalist id="myplaylist">
 
+								</datalist>
+								<script>
+									$('.flexdatalist').flexdatalist({
+										minLength : 0,
+										limitOfValues : 9,
+										valueProperty : 'value',
+										searchContain : true
+									});
+								</script>
 							</div>
-						</div>
-						<div class="playlist-wrapper">
-							<div class="playlist">
-								<div class="menuicon">
-									<img src="./images/menubtn.png" class="menubtn" />
-									<img src="./images/shufflebtn.png" class="shufflebtn" style="display:none;"/>
+						</div><h3 id='info' class="h1 text-center"></h3>
+						<div class="playlist-wrapper" id="data-table-wrapper1">
+							<div class="playlist note" rel="https://i.scdn.co/image/318980cd1f2af273e611fdaae3f08bb35a09e9fc" id="4ZiwTg2KE4ejWWQRFg0u3U">
+								<div class="menuicon"><img src="./images/menubtn.png" class="menubtn">
 								</div>
-								<div class="playlist-content">
-									<div class="title">
-										pole dancer
-									</div>
-									<div class="artistname">
-										wale
-									</div>
-								</div>
-							</div>
-							<div class="playlist">
-								<div class="menuicon">
-									<img src="./images/menubtn.png" class="menubtn" />
-									<img src="./images/shufflebtn.png" class="shufflebtn" style="display:none;"/>
-								</div>
-								<div class="playlist-content">
-									<div class="title">
-										pole dancer
-									</div>
-									<div class="artistname">
-										wale
+
+								<div rel="https://p.scdn.co/mp3-preview/c7afdbecb043894c8afeeaa565e4173022f5edfc?cid=3db31354b1754d139fa4e2dc4d52aab9" class="song-wrapper playlist-content">
+									<div class="song-details-wrap">
+										<div class="song-title" data-album-name="Strip Club Musik">
+											<span class="title">Hennessy Wit No Draws</span>
+											<span class="close-list" id="4ZiwTg2KE4ejWWQRFg0u3U">Delete</span>
+										</div>
+										<div class="artist-name">
+											Dopetrackz
+										</div>
 									</div>
 								</div>
 							</div>
@@ -178,11 +192,16 @@ include('site-guard.php');
 
 								<div class="socialWrap">
 									<div class="download-wrapper">
-										<div class="title">DOWNLOAD</div>
+										<div class="title">
+											DOWNLOAD
+										</div>
+										<canvas id="myCanvas" width="300" height="300"></canvas>
 									</div>
 									<div class="share-wrapper">
-										<div class="title">SHARE</div>
-										
+										<div class="title">
+											SHARE
+										</div>
+
 										<a href="javascript:void(0)" class="fb" onclick="postfeed(event);" title="Facebook-Share-Button"><i class="icon-facebook"></i></a>
 										<a href="https://twitter.com/intent/tweet?text=Create%20your%20own%20perfect%20Bryce%20Vine%20setlist.&amp;url=http%3A%2F%2Fsetlist.brycevine.com%2Fshare.php%3Fq%3Dabinll%2C2kDCTALPxrao9IXYNOgnXh" class="tw"><i class="icon-twitter" title="Twitter-Share-Button"></i></a>
 									</div>
@@ -205,7 +224,7 @@ include('site-guard.php');
 								HERE ARE THE TOP RACHET ANTHEMS
 							</div>
 							<div class="line2">
-								
+
 							</div>
 						</div>
 						<div class="playlistIframe">
@@ -239,7 +258,13 @@ include('site-guard.php');
 
 			</div>
 		</div>
-
+		<div class="officialrules_wrapper">
+			<div class="officialrules">
+				<button class="button-small button-cross" style="position: absolute;top: -11px;right: -11px;"></button>
+				Also, by clicking submit, I agree to receive to receive personalized updates and marketing messages about Bryce Vine and about similar artists, products and offers, based on my information, interests, activities, website visits, and device data and in accordance with the <a href="http://www.warnerbrosrecords.com/privacy-policy" target="_blank" class="external-link" rel="nofollow" title="Follow link">Privacy&nbsp;Policy</a>. I understand I can opt-out at any time by emailing <a href="mailto:privacypolicy@wmg.com" target="_blank">privacypolicy@wmg.com</a>
+				<span class="buttons"> <a href="javascript:void(0);" class="submitButton">Submit</a> </span>
+			</div>
+		</div>
 	</body>
 	<script src="js/scripts1.js?s4s"></script>
 </html>
