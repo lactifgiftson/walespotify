@@ -725,8 +725,10 @@ function savePlaylist() {
 			generateCoverArt(playlist);
 			saveTidsToPlaylist(playlist, tids);
 			$(".container-fluid.work").hide();
-			jQuery('#audio-wrapper').remove();
-			$("#page-three").css("visibility", "hidden");
+
+			//jQuery('#audio-wrapper').remove();
+			//$("#page-three").css("visibility", "hidden");
+
 			$(".ajax-load").show();
 			setTimeout(function() {
 				pid = playlist.id;
@@ -939,4 +941,6 @@ jQuery(document).ready(function() {
 		generatePlaylistForSpotify();
 		savePlaylistToSpotify();
 	});
+
 }); 
+

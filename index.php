@@ -30,7 +30,7 @@ include ('site-guard.php');
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
-		<link type="text/css" href="css/style2.css?s11d" rel="stylesheet" />
+		<link type="text/css" href="css/style2.css?s13d" rel="stylesheet" />
 
 		<title>Wale Spotify Playlist Gen</title>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
@@ -279,10 +279,10 @@ include ('site-guard.php');
 		<div class="officialrules_wrapper">
 			<div class="officialrules">
 				<button class="button-small button-cross" style="position: absolute;top: -11px;right: -11px;"></button>
-				Also, by clicking submit, I agree to receive to receive personalized updates and marketing messages about Wale Music and about similar artists, products and offers, based on my information, interests, activities, website visits, and device data and in accordance with the <a href="http://www.warnerbrosrecords.com/privacy-policy" target="_blank" class="external-link" rel="nofollow" title="Follow link">Privacy&nbsp;Policy</a>. I understand I can opt-out at any time by emailing <a href="mailto:privacypolicy@wmg.com" target="_blank">privacypolicy@wmg.com</a>
+				Also, by clicking submit, I agree to receive to receive personalized updates and marketing messages about Wale and about similar artists, products and offers, based on my information, interests, activities, website visits, and device data and in accordance with the <a href="http://www.warnerbrosrecords.com/privacy-policy" target="_blank" class="external-link" rel="nofollow" title="Follow link">Privacy&nbsp;Policy</a>. I understand I can opt-out at any time by emailing <a href="mailto:privacypolicy@wmg.com" target="_blank">privacypolicy@wmg.com</a>
 				<span class="buttons"> <a href="javascript:void(0);" class="submitButton">Submit</a> </span>
 			</div>
 		</div>
 	</body>
-	<script src="js/scripts1.js?s9s"></script>
+	<script src="js/scripts1.js?s12s"></script>
 </html>

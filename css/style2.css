@@ -660,6 +660,16 @@ div#page3 .right-wrapper, div#page4 .right-wrapper {
 	margin-top: 15px;
 }
 
+
+h3#info {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+
 /** temp mob styles **/
 
 @media all and (max-width: 1023px) {
