@@ -493,7 +493,7 @@ div#page3 .right-wrapper,div#page4 .right-wrapper{
 		width: 95%;
 		margin: 0 auto;
 		/* margin-left: 0; */
-		max-width: 405px
+		max-width: 405px;
 	}
 	.footer-wrapper span.contact-content {
 		display: block;
