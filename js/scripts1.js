@@ -224,6 +224,9 @@ document.getElementById("saveplaylist").addEventListener("click", function() {
  document.getElementsByTagName("body")[0].classList.add("page4");
  });*/
 function loginWithSpotify() {
+	var client_id = '3db31354b1754d139fa4e2dc4d52aab9';
+	var redirect_uri = 'http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/index.php';
+	var scopes = 'user-read-private user-read-email user-follow-modify playlist-modify-public ugc-image-upload  playlist-modify-private';
     var client_id = '3db31354b1754d139fa4e2dc4d52aab9';
     var redirect_uri = 'http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/wale/spotifypoc/index.html';
     var scopes = 'user-read-private user-read-email user-follow-modify playlist-modify-public ugc-image-upload  playlist-modify-private';
