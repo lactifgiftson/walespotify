@@ -206,9 +206,9 @@ function postfeed(pid) {
 
 function twitterShare() {
 
-    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Wale Music playlist.") + '&url=' + encodeURIComponent(TwshareURL);
+    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
     jQuery("a.tw").attr("href", href);
-    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Wale Music Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
+    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
     jQuery("#page3 .socialWrap a.tw").attr("href", href);
 }
 
@@ -370,7 +370,7 @@ function playPauseSong() {
         jQuery("#data-table-wrapper1 div.playlist").first().addClass("active");
         var songId8 = jQuery("#data-table-wrapper1 div.playlist").eq(jQuery("#data-table-wrapper1 div.playlist").first().index()).attr("id");
         playSong(jQuery("#data-table-wrapper1 div.playlist").first().index(), songId8);
-        //CallOmniture('Wale Music: Spotify Playlist Generator:Landing:Step 2:Play Song (player) Click');
+        //CallOmniture('Wale: Spotify Playlist Generator:Landing:Step 2:Play Song (player) Click');
     } else {
         jQuery("#data-table-wrapper1 div.playlist").each(function() {
             if (jQuery(this).hasClass("active")) {
@@ -380,7 +380,7 @@ function playPauseSong() {
         //playSong(activeIndex);
         audioElement.play();
         showPauseicon();
-        //CallOmniture('Wale Music: Friends Spotify Playlist Generator:Landing:Step 2:Play Song (player) Click');
+        //CallOmniture('Wale: Friends Spotify Playlist Generator:Landing:Step 2:Play Song (player) Click');
     }
     if (!audioElement.paused && !isPause) {
         audioElement.pause();
@@ -627,8 +627,8 @@ function savePlaylist() {
             generateCoverArt(playlist);
             saveTidsToPlaylist(playlist, tids);
             $(".container-fluid.work").hide();
-            jQuery('#audio-wrapper').remove();
-            $("#page-three").css("visibility", "hidden");
+            //jQuery('#audio-wrapper').remove();
+
             $(".ajax-load").show();
             setTimeout(function() {
                 pid = playlist.id;
@@ -835,7 +835,7 @@ jQuery(document).ready(function() {
     jQuery(".playlist-button a").on("click", function() {
         jQuery(".ajax-loader").show();
         audioElement.pause();
-        CallOmniture('Wale Music:Spotify Playlist Generator Email Signup:Landing:Step 2:Save Playlist Click');
+        CallOmniture('Wale:Spotify Playlist Generator Email Signup:Landing:Step 2:Save Playlist Click');
         generatePlaylistForSpotify();
         savePlaylistToSpotify();
     });

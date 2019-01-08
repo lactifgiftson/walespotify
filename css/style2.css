@@ -672,6 +672,13 @@ div#page4 .right-wrapper {
     margin-top: 15px;
 }
 
+h3#info {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
 
 /** temp mob styles **/
 
