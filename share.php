@@ -20,7 +20,7 @@ $pid = $_GET["pid"];
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
-		<script src="http://setlist.brycevine.com/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="js/jquery.ui.touch-punch.min.js"></script>
 		<!--link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-red.min.css" /-->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 		<!-- Custom styles for this template -->

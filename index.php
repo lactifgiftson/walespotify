@@ -39,7 +39,7 @@ include ('site-guard.php');
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
-		<script src="http://setlist.brycevine.com/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="js/jquery.ui.touch-punch.min.js"></script>
 		<!--link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-red.min.css" /-->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 		<!-- Custom styles for this template -->
@@ -50,7 +50,7 @@ include ('site-guard.php');
 		<![endif]-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
-		<script src="http://setlist.brycevine.com/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="js/jquery.ui.touch-punch.min.js"></script>
 		<link href="css/jquery.flexdatalist.min.css" rel="stylesheet" type="text/css">
 		<script src="js/jquery.flexdatalist.min.js"></script>
 	</head>
@@ -221,7 +221,7 @@ include ('site-guard.php');
 										</div>
 
 										<a href="javascript:void(0)" class="fb" onclick="postfeed(event);" title="Facebook-Share-Button"><i class="icon-facebook"></i></a>
-										<a href="https://twitter.com/intent/tweet?text=Create%20your%20own%20perfect%20Bryce%20Vine%20setlist.&amp;url=http%3A%2F%2Fsetlist.brycevine.com%2Fshare.php%3Fq%3Dabinll%2C2kDCTALPxrao9IXYNOgnXh" class="tw"><i class="icon-twitter" title="Twitter-Share-Button"></i></a>
+										<a href="#" class="tw"><i class="icon-twitter" title="Twitter-Share-Button"></i></a>
 									</div>
 								</div>
 							</div>
@@ -279,10 +279,10 @@ include ('site-guard.php');
 		<div class="officialrules_wrapper">
 			<div class="officialrules">
 				<button class="button-small button-cross" style="position: absolute;top: -11px;right: -11px;"></button>
-				Also, by clicking submit, I agree to receive to receive personalized updates and marketing messages about Bryce Vine and about similar artists, products and offers, based on my information, interests, activities, website visits, and device data and in accordance with the <a href="http://www.warnerbrosrecords.com/privacy-policy" target="_blank" class="external-link" rel="nofollow" title="Follow link">Privacy&nbsp;Policy</a>. I understand I can opt-out at any time by emailing <a href="mailto:privacypolicy@wmg.com" target="_blank">privacypolicy@wmg.com</a>
+				Also, by clicking submit, I agree to receive to receive personalized updates and marketing messages about Wale Music and about similar artists, products and offers, based on my information, interests, activities, website visits, and device data and in accordance with the <a href="http://www.warnerbrosrecords.com/privacy-policy" target="_blank" class="external-link" rel="nofollow" title="Follow link">Privacy&nbsp;Policy</a>. I understand I can opt-out at any time by emailing <a href="mailto:privacypolicy@wmg.com" target="_blank">privacypolicy@wmg.com</a>
 				<span class="buttons"> <a href="javascript:void(0);" class="submitButton">Submit</a> </span>
 			</div>
 		</div>
 	</body>
-	<script src="js/scripts1.js?s7s"></script>
+	<script src="js/scripts1.js?s9s"></script>
 </html>
