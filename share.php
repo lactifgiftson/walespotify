@@ -1,5 +1,5 @@
 <?php
-//include('site-guard.php');
+include('site-guard.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,8 @@
 	<body class="page4">
 		<div id="content-wrapper">
 			<div class="full-wrapper">
-							
+						
+				
 				<div id="page4">
 					<div class="left-wrapper">
 						<div class="leftimage-wrapper"><img src="./images/leftimage.png" />
@@ -72,7 +73,7 @@
 
 				<div class="copyright-content">
 
-					<span>Â© 2019 WARNER BROS. RECORDS AND WALE</span>
+					<span>© 2019 WARNER BROS. RECORDS AND WALE</span>
 					<span class="seperator mob">|</span>
 					<span class="contact-content"> <a href="http://www.warnerbrosrecords.com/privacy-policy" class="privacy-policy" target="_blank" title="Privacy-Policy">privacy policy</a><span class="seperator">|</span><a href="http://www.warnerbrosrecords.com/terms-of-use" class="terms-of-use" target="_blank" title="Terms-Of-use">terms of service</a><span class="seperator">|</span><a href="http://www.warnerbrosrecords.com/privacy-policy#adchoices" class="ad-choices" target="_blank" title="Ad-Choices">ad choices</a> </span>
 
@@ -82,5 +83,5 @@
 		</div>
 
 	</body>
-	<script src="js/scripts1.js?s4s"></script>
+	<script src="js/scripts1.js?s5s"></script>
 </html>

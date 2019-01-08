@@ -1,4 +1,5 @@
 <?php
+
 include ('site-guard.php');
 ?>
 <!DOCTYPE html>
@@ -9,9 +10,26 @@ include ('site-guard.php');
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
+
 		<script src="lib/jquery-1.11.1.min.js"></script>
 		<script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script>
+
+		
+		<meta property="og:url" content="http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/images/walelogo.png" />
+		<meta property="og:title" content="Wale playlist generator"/>
+		<meta property="og:description" content="Create your own Wale playlist generator" />
+		
+		<meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@wale">
+        <meta name="twitter:description" content="Create your own Wale playlist generator">
+        <meta name="twitter:text:title" content="Wale playlist generator">
+        <meta name="twitter:image" content="https://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/images/walelogo.png">
+		
+		
+
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
@@ -266,5 +284,5 @@ include ('site-guard.php');
 			</div>
 		</div>
 	</body>
-	<script src="js/scripts1.js?s4s"></script>
+	<script src="js/scripts1.js?s7s"></script>
 </html>

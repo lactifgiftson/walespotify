@@ -11,6 +11,8 @@ wholeTrackData["4ZiwTg2KE4ejWWQRFg0u3U"] = {
 }
 var finalTraclList = [];
 /** share scripts **/
+var baseURL = "http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/";
+
 window.fbAsyncInit = function() {
 	// init the FB JS SDK
 	FB.init({
@@ -25,6 +27,7 @@ function getTime() {
 	return Math.round(new Date().getTime() / 1000);
 }
 
+<<<<<<< HEAD
 function callSpotify(url, data) {
 	return $.ajax(url, {
 		dataType : 'json',
@@ -34,6 +37,37 @@ function callSpotify(url, data) {
 		}
 	});
 }
+=======
+	// Load the SDK asynchronously
+	( function(d, s, id) {
+			var js,
+			    fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk')); 
+		
+function postfeed() {
+		event.preventDefault();
+		//var path = window.location;
+		//var fullPath = path.origin + path.pathname;
+		//console.log(fullPath);
+        var customtitle = "Create a new Wale Playlist";
+        var ogimg = baseURL+"images/walelogo.png";
+        var obj = {
+			app_id : "407045793367858",
+            method: "feed",
+			picture : ogimg,
+			link: baseURL+"share.php?cache", 
+			name: customtitle,
+            description: customtitle,
+			display: "popup"  
+        };
+>>>>>>> 6e59ab3957513cec1e94dabae13b4c425897b53c
 
 function millisToMinutesAndSeconds(millis) {
 	var minutes = Math.floor(millis / 60000);
@@ -163,9 +197,16 @@ function postfeed() {
 
  jQuery('#page3 .socialWrap a.tw').attr('href', twitterURL);*/
 
+TwshareURL = baseURL + "share.php?cache"
+twitterShare();
 function twitterShare() {
+<<<<<<< HEAD
 	var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect Bryce Vine setlist.") + '&url=' + encodeURIComponent(TwshareURL);
 	jQuery("a.tw").attr("href", href);
+=======
+    var href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent("Create your own perfect wale Playlist.") + '&url=' + encodeURIComponent(TwshareURL);
+    jQuery("#page3 .socialWrap a.tw").attr("href", href);
+>>>>>>> 6e59ab3957513cec1e94dabae13b4c425897b53c
 }
 
 /** common scripts **/
