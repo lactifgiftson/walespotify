@@ -906,7 +906,7 @@ body .ajax-loader .inner {
 #page2 .logo-wrapper img,
 #page3 .logo-wrapper img,
 #page4 .logo-wrapper img {
-    width: 65%;
+    width: 57%;
 }
 
 #page3 .pagedesc,
@@ -974,6 +974,10 @@ div.logo-wrapper {
     }
     div#seekObjContainer {
         position: relative;
+    }
+    .searchbox .dummy {
+        background-color: #fff;
+        border-radius: 10px;
     }
 }
 
@@ -1147,6 +1151,10 @@ div.logo-wrapper {
     div#seekObjContainer {
         position: relative;
     }
+    #page3 .socialWrap .share-wrapper {
+        margin: 0;
+        margin-top: 20px;
+    }
 }
 
 @media all and (max-width:767px) and (orientation:landscape) {
@@ -1171,5 +1179,22 @@ div.logo-wrapper {
     }
     #page3 .socialWrap .share-wrapper {
         margin: 25px 0;
+    }
+    div#login-form {
+        font-size: 32px;
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1023px) {
+    div#page1 .right-wrapper .logo-wrapper img {
+        width: 48%;
+    }
+    .searchbox .dummy {
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    #page3 .socialWrap .share-wrapper {
+        margin: 0;
+        margin-top: 20px;
     }
 }

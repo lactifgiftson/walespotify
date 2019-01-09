@@ -62,7 +62,7 @@ include ('site-guard.php');
 
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
 
-		<link type="text/css" href="css/style2.css?s15d" rel="stylesheet" />
+		<link type="text/css" href="css/style2.css?s35d" rel="stylesheet" />
 
 
 
@@ -582,7 +582,7 @@ include ('site-guard.php');
 
 	</body>
 
-	<script src="js/scripts1.js?sa4s"></script>
+	<script src="js/scripts1.js?sa5s"></script>
 
 </html>
 

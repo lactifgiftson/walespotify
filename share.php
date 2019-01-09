@@ -14,7 +14,7 @@ $pid = $_GET["pid"];
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
-		<link type="text/css" href="css/style2.css?d" rel="stylesheet" />
+		<link type="text/css" href="css/style2.css?sdf" rel="stylesheet" />
 		
 		<title>Wale Spotify Playlist Gen</title>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
