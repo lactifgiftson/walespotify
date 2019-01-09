@@ -421,12 +421,16 @@ div#page2 .pagedesc {
 	text-transform: uppercase;
 	text-align: left;
 	margin-left: 4%;
+	width: 76%;
 }
 
 #song-playing .song-title {
 	text-align: center;
+	
 }
-
+#page2 .playlist-wrapper .playlist .playlist-content .title{
+	cursor: pointer;
+}
 #page2 .playlist-wrapper .playlist > * {
 	display: inline-block;
 	vertical-align: middle;
@@ -436,15 +440,17 @@ div#page2 .pagedesc {
 .close-list {
 	float: right;
 	display: none;
+	color: #fff;
+	cursor: pointer;
 }
 
-#page2 div:first-child .close-list {
+#page2 div.playlist:first-child .close-list {
 	display: none;
 }
 
 .playlist-wrapper div:hover .close-list {
 	display: inline-block;
-	color: #fff;
+	color: #e40000;
 }
 
 .flexdatalist-multiple li.value {
@@ -666,6 +672,7 @@ h3#info {
     font-weight: 400;
     font-size: 15px;
     text-transform: uppercase;
+    color: #e40000;
 }
 
 

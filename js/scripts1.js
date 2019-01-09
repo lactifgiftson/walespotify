@@ -250,7 +250,7 @@ function generateHTML(trackId) {
 		jQuery(".song-playing").append(songPlaying);
 	}
 	jQuery('span.close-list').click(function() {
-		jQuery(this).parents("li").remove();
+		jQuery(this).parents("div.playlist").remove();
 		if ($("#data-table-wrapper1 div.playlist").length < 10) {
 			$(".flexdatalist-multiple li.input-container").addClass("showit");
 			$(".flexdatalist-multiple li.input-container").show();
@@ -280,9 +280,8 @@ function registerForEmail(email, dSrc) {
 	var signupURL = 'https://signup.wmg.com/register';
 	var newsletterID = '7882400';
 	var EntryType = "SpotifyEntry";
-	var dataSource = "wale_NewsletterOptIn_MainSignUp_Website_FollowButton_Spotify";
-	var ext = 'A7349441-0B11-4DFF-B52D-49DE9991E92D:6011002';
-	var signUpRequestUrl = signupURL + '?geoip=true&EntryType=SpotifyEntry&email=' + email + '&newsletterId=' + newsletterID + '&Datasource=' + dataSource + '&_ext=' + ext + '&autoreply=no&jsonp=webformCallback&jsoncallback=?';
+	var dataSource = "Wale_PlaylistGenerator_FollowButton_Spotify";
+	var signUpRequestUrl = signupURL + '?geoip=true&email=' + email + '&newsletterId=' + newsletterID + '&Datasource=' + dataSource + '&autoreply=no&jsonp=webformCallback&jsoncallback=?';
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
 	var src = signUpRequestUrl;
@@ -743,6 +742,7 @@ function savePlaylist() {
 			setTimeout(function() {
 				document.getElementsByTagName("body")[0].removeAttribute("class");
 				jQuery("#page1,#page2,#page4").fadeOut();
+				$(".audioWrap").remove();
 				jQuery("#page3").fadeIn();
 				document.getElementsByTagName("body")[0].classList.add("page3");
 			}, 8000);
