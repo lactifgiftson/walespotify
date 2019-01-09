@@ -45,7 +45,7 @@ $pid = $_GET["pid"];
 						</div>
 						<div class="pagedesc">
 							<div class="line1">
-								HERE ARE THE TOP RACHET ANTHEMS
+								HERE ARE MY TOP RACHET ANTHEMS
 							</div>
 							<div class="line2">
 								

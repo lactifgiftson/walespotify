@@ -270,7 +270,7 @@ include ('site-guard.php');
 
 									value = "4ZiwTg2KE4ejWWQRFg0u3U"
 
-									placeholder=""
+									placeholder="Search"
 
 									class='flexdatalist mdl-textfield mdl-js-textfield mdl-textfield--floating-label search'
 
@@ -321,6 +321,7 @@ include ('site-guard.php');
 								<div class="menuicon"><img src="./images/menubtn.png" class="menubtn">
 
 								</div>
+
 
 
 
