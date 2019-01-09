@@ -1508,6 +1508,61 @@ function savePlaylist() {
 
     });
 
+
+function savePlaylist() {
+	var title = getPlaylistTitle();
+	var tids = [];
+	var topTracks = [];
+	//topTracks = $("input[name ='language12']").val().split(",");
+	$("#data-table-wrapper1 div.playlist").each(function() {
+		if ($(this).attr("id") != "")
+			topTracks += $(this).attr("id") + ",";
+	});
+	topTracks = topTracks.split(",");
+
+	_.each(topTracks, function(track, i) {
+		if (topTracks[i] != "")
+			tids.push("spotify:track:" + track);
+		//console.log("tids" + tids);
+	});
+
+	var url = "https://api.spotify.com/v1/users/" + credentials.user_id + "/playlists";
+	var json = {
+		name : title
+	};
+
+	postSpotify("json", url, json, function(ok, playlist) {
+		if (ok) {
+			generateCoverArt(playlist);
+			saveTidsToPlaylist(playlist, tids);
+			$(".container-fluid.work").hide();
+
+			//jQuery('#audio-wrapper').remove();
+			//$("#page-three").css("visibility", "hidden");
+
+			$(".ajax-load").show();
+			setTimeout(function() {
+				pid = playlist.id;
+				jQuery(".share-wrapper").attr("rel", pid);
+				TwshareURL = baseURL + "share.php?pid=" + jQuery(".share-wrapper").attr("rel");
+				FBshareURL = baseURL + "share.php?pid=" + jQuery(".share-wrapper").attr("rel"),
+				FBshareURL1 = "share.php?pid=" + jQuery(".share-wrapper").attr("rel");
+
+				twitterShare();
+				$("#page3 #playlist-container iframe").attr("src", "https://open.spotify.com/embed/playlist/" + playlist.id);
+			}, 5000);
+			setTimeout(function() {
+				document.getElementsByTagName("body")[0].removeAttribute("class");
+				jQuery("#page1,#page2,#page4").fadeOut();
+				jQuery("#page3").fadeIn();
+				document.getElementsByTagName("body")[0].classList.add("page3");
+			}, 8000);
+
+		} else {
+			error("Can't create the new playlist");
+		}
+	});
+
 }
 
 
@@ -1661,6 +1716,7 @@ function generateCoverArt(playlist) {
 
 
 jQuery(document).ready(function() {
+
 
     $("#saveplaylist").on('click', function() {
 
@@ -1893,3 +1949,121 @@ jQuery(document).ready(function() {
 
 
 });
+
+	$("#saveplaylist").on('click', function() {
+		if ($("input.flexdatalist").val().split(",").length < 5) {
+			info("Please select a minimum of 5 tracks to generate the playlist");
+			$("body, html").animate({
+				scrollTop : $("#info").offset().top
+			}, 500);
+			return false;
+		} else {
+			savePlaylist();
+		}
+
+	});
+	$("#save-button").on('click', function() {
+		if ($("input.flexdatalist").val().split(",").length < 5) {
+			info("Please select a minimum of 5 tracks to generate the playlist");
+			$("body, html").animate({
+				scrollTop : $("#info").offset().top
+			}, 500);
+			return false;
+		} else {
+			savePlaylist();
+		}
+
+	});
+	jQuery("#spotifyconnect").click(function() {
+		jQuery('.officialrules_wrapper').fadeIn();
+	});
+	jQuery('.button-cross').click(function() {
+		jQuery('.officialrules_wrapper').fadeOut();
+	});
+
+	jQuery('.submitButton').click(function() {
+		loginWithSpotify();
+	});
+	jQuery(".icon-play2").click(function() {
+		jQuery(this).hide();
+		jQuery(".icon-pause").show();
+	});
+	jQuery(".icon-pause").click(function() {
+		jQuery(this).hide();
+		jQuery(".icon-play2").show();
+	});
+	performAuthDance();
+	var $input = $('.flexdatalist');
+	$input.on('select:flexdatalist', function() {
+	}).on('change:flexdatalist', function(e, set) {
+		//if(typeof set.value != undefined){
+		generateHTML(set.value);
+		//}
+		if ($("input.flexdatalist").val().split(",").length >= 5) {
+			$("#info").text("");
+		}
+		if ($(".flexdatalist-multiple li").length >= 10) {
+			$(".flexdatalist-multiple li.input-container ").hide();
+			$(".flexdatalist-multiple li.input-container").removeClass("showit");
+		} else if ($(".flexdatalist-multiple li").length < 10) {
+			$(".flexdatalist-multiple li.input-container").addClass("showit");
+			$(".flexdatalist-multiple li.input-container").show();
+		} else {
+			$(".flexdatalist-multiple li.input-container").removeClass("showit");
+		}
+		updateValueView($(this));
+	}).on('before:flexdatalist.remove', function(e) {
+	});
+	audioElement = document.getElementById("audio-player");
+	audioElement.addEventListener("timeupdate", timeCal);
+	audioElement.onplaying = function() {
+		isPlaying = true;
+		isPause = false;
+	};
+	audioElement.onpause = function() {
+		isPlaying = false;
+		isPause = true;
+	};
+	audioElement.onended = function() {
+		isPlaying = false;
+		isPause = true;
+		showPlayicon();
+		playNextSong();
+	}
+	jQuery(".play-pause").on("click", function() {
+		playPauseSong();
+	});
+	jQuery("body").on("click", ".song-title .title,.letter", function() {
+		var currentTitleIndex = jQuery(this).parents("div.playlist").index();
+		var currenTitle = jQuery(this).text();
+		playSongOnTitleClick(currentTitleIndex);
+	});
+	jQuery(".prev").on("click", function(e) {
+		e.stopPropagation();
+		if (!audioElement.paused && !isPause) {
+			audioElement.pause();
+			showPlayicon();
+		}
+		//CallOmniture('WaleMusic: Spotify Playlist Generator:Landing:Step 2:Previous Song (player) Click');
+		playPrevSong();
+	});
+	jQuery(".next").on("click", function(e) {
+		e.stopPropagation();
+		if (!audioElement.paused && !isPause) {
+			audioElement.pause();
+			showPlayicon();
+		}
+		//CallOmniture('WaleMusic: Spotify Playlist Generator:Landing:Step 2:Next Song (player) Click');
+		playNextSong();
+	});
+	jQuery(".playlist-button a").on("click", function() {
+		jQuery(".ajax-loader").show();
+		audioElement.pause();
+		CallOmniture('Wale Music:Spotify Playlist Generator Email Signup:Landing:Step 2:Save Playlist Click');
+		generatePlaylistForSpotify();
+		savePlaylistToSpotify();
+	});
+
+}); 
+
+
