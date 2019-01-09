@@ -21,7 +21,7 @@ $pid = $_GET["pid"];
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
 		<link type="text/css" href="css/style2.css?d" rel="stylesheet" />
-
+		<link type="text/css" href="css/style2.css?sdf" rel="stylesheet" />
 		<title>Wale Spotify Playlist Gen</title>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -50,7 +50,7 @@ $pid = $_GET["pid"];
 						</div>
 						<div class="pagedesc">
 							<div class="line1">
-								HERE ARE THE TOP RACHET ANTHEMS
+								HERE ARE MY TOP RACHET ANTHEMS
 							</div>
 							<div class="line2">
 

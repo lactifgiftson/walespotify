@@ -286,7 +286,7 @@ function postfeed(pid) {
 
 	var customtitle = "Create a new Wale Playlist";
 
-	var ogimg = fullPath + "/images/walelogo.png";
+	var ogimg = fullPath + "/playlist-share/"+pid+".png";
 
 	var obj = {
 
@@ -1401,7 +1401,9 @@ function generateCoverArt(playlist) {
 				$("#ready-to-save").hide(100);
 
 				$("#playlist-name").attr('href', playlist.uri);
-				saveImage(playlist.id, document.getElementById("myCanvasLarge").toDataURL('image/jpeg', 1.0).split(',')[1]);
+				setTimeout(function() {
+					saveImage(playlist.id, document.getElementById("myCanvasLarge").toDataURL('image/jpeg', 1.0).split(',')[1]);
+				},10000);
 			} else {
 
 				error("Trouble saving to the playlist");
