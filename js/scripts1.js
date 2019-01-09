@@ -1047,11 +1047,10 @@ function toDataURL(url, callback) {
 
 }
 
-function postSpotifyImage(typeOfAjax, url, json, callback) {
+function postSpotifyImage(typeOfAjax,playlist, url, json, callback) {
 
 	var dataUrl = document.getElementById("myCanvas").toDataURL('image/jpeg', 1.0).split(',')[1];
-
-	var imgURL = document.getElementById("myCanvas").toDataURL('image/jpeg', 1.0);
+	var imgURL = document.getElementById("myCanvasLarge").toDataURL('image/jpeg', 1.0);
 
 	$('.navbar').append('<img src="' + imgURL + '" /><br/><br/>');
 
@@ -1080,9 +1079,9 @@ function postSpotifyImage(typeOfAjax, url, json, callback) {
 		body : dataUrl,
 
 		success : function(r) {
-
+			
 			callback(true, r);
-
+			
 		},
 
 		error : function(r) {
@@ -1211,6 +1210,21 @@ function saveTidsToPlaylist(playlist, tids) {
 
 }
 
+function saveImage(pid, image) {
+	var renderedImg = image;
+	$.ajax({
+		type : "POST",
+		url : "save.php",
+		data : {
+			base64Img : renderedImg,
+			pid : pid
+		}
+	}).done(function(o) {
+		console.log("saved")
+		console.log(renderedImg);
+	})
+}
+
 function savePlaylist() {
 
 	var title = getPlaylistTitle();
@@ -1252,9 +1266,10 @@ function savePlaylist() {
 	postSpotify("json", url, json, function(ok, playlist) {
 
 		if (ok) {
-
 			generateCoverArt(playlist);
+			generateCoverArtLarge(playlist, "myCanvasLarge", 800);
 
+			
 			saveTidsToPlaylist(playlist, tids);
 
 			$(".container-fluid.work").hide();
@@ -1291,10 +1306,12 @@ function savePlaylist() {
 
 				$(".audioWrap").remove();
 				$(".ajax-loader").hide();
-				jQuery("#page3").fadeIn();
+				jQuery("#page3").fadeIn(function(){
+					
+				});
 
 				document.getElementsByTagName("body")[0].classList.add("page3");
-
+				
 			}, 8000);
 
 		} else {
@@ -1302,7 +1319,7 @@ function savePlaylist() {
 			error("Can't create the new playlist");
 
 		}
-
+		
 	});
 
 }
@@ -1371,7 +1388,7 @@ function generateCoverArt(playlist) {
 
 		var url1 = "https://api.spotify.com/v1/users/" + playlist.owner.id + "/playlists/" + playlist.id + "/images";
 
-		postSpotifyImage("image/jpeg", url1, {
+		postSpotifyImage("image/jpeg",playlist, url1, {
 
 			uris : ""
 
@@ -1384,7 +1401,7 @@ function generateCoverArt(playlist) {
 				$("#ready-to-save").hide(100);
 
 				$("#playlist-name").attr('href', playlist.uri);
-
+				saveImage(playlist.id, document.getElementById("myCanvasLarge").toDataURL('image/jpeg', 1.0).split(',')[1]);
 			} else {
 
 				error("Trouble saving to the playlist");
@@ -1660,4 +1677,4 @@ jQuery(document).ready(function() {
 
 	});
 
-}); 
+});

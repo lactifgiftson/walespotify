@@ -1,21 +1,27 @@
 <?php
-include('site-guard.php');
+include 'config.php';
 $pid = $_GET["pid"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta name="twitter:card" content="photo" />
+		<meta name="twitter:site" content="@Wale" />
+		<meta name="twitter:title" content="Wale playlist generator" />
+		<meta name="twitter:description" content="Create your own Wale playlist generator" />
+		<meta name="twitter:image" content="<?php echo $baseurl;?>playlist-share/<?php echo $pid.'.png'?>" />
+		<meta name="twitter:url" content="http://example.com/mypage.html" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		
+
 		<!--script src="lib/bootstrap.min.js"></script>
 		<script src="lib/underscore-min.js"></script-->
 		<!--link type="text/css" href="css/style.css?d" rel="stylesheet" /-->
 		<link type="text/css" href="css/style2.css?d" rel="stylesheet" />
-		
+
 		<title>Wale Spotify Playlist Gen</title>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -33,8 +39,7 @@ $pid = $_GET["pid"];
 	<body class="page4">
 		<div id="content-wrapper">
 			<div class="full-wrapper">
-						
-				
+
 				<div id="page4">
 					<div class="left-wrapper">
 						<div class="leftimage-wrapper"><img src="./images/leftimage.png" />
@@ -48,7 +53,7 @@ $pid = $_GET["pid"];
 								HERE ARE THE TOP RACHET ANTHEMS
 							</div>
 							<div class="line2">
-								
+
 							</div>
 						</div>
 						<div class="playlistIframe">

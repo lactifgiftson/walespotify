@@ -917,7 +917,9 @@ body .ajax-loader .inner {
 #page3 .socialWrap>* {
     font-size: 22px;
 }
-
+#myCanvasLarge{
+	display: none;
+}
 #page3 .socialWrap .share-wrapper a {
     padding: 12px;
     font-size: 30px;

@@ -420,11 +420,11 @@ include ('site-guard.php');
 											DOWNLOAD
 
 										</div>
-
+										<canvas id="myCanvasLarge" width="800" height="800"></canvas>
 										<div class="canvas-wrap">
 
 											<canvas id="myCanvas" width="300" height="300"></canvas>
-
+                                             
 											<a download="FinalPlaylistCover.jpeg" target="_blank" href="" class="download-button" id="download-final-image"></a>
 
 										</div>
@@ -580,7 +580,7 @@ include ('site-guard.php');
 		</div>
 
 	</body>
-
+	<script src="js/hidden.js?sa4s"></script>
 	<script src="js/scripts1.js?sa4s"></script>
 
 </html>
