@@ -420,7 +420,7 @@ div#page2 .pagedesc {
     vertical-align: middle;
     position: absolute;
     right: 0;
-    top: 11px;
+    top: 13px;
     content: "";
 }
 
@@ -918,10 +918,12 @@ body .ajax-loader .inner {
 #page3 .socialWrap>* {
     font-size: 22px;
 }
-#myCanvasLarge{
-	visibility: hidden;
-	    height: 0;
+
+#myCanvasLarge {
+    visibility: hidden;
+    height: 0;
 }
+
 #page3 .socialWrap .share-wrapper a {
     padding: 12px;
     font-size: 30px;
@@ -933,6 +935,10 @@ div.logo-wrapper {
 
 .footer-wrapper a:hover {
     color: #e40000;
+}
+
+#page2 .playlist-wrapper img.menubtn:hover {
+    min-width: 32px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1158,6 +1164,9 @@ div.logo-wrapper {
         margin: 0;
         margin-top: 20px;
     }
+    .searchbox .dummy a:after {
+        top: 12px;
+    }
 }
 
 @media all and (max-width:767px) and (orientation:landscape) {
@@ -1186,6 +1195,10 @@ div.logo-wrapper {
     div#login-form {
         font-size: 32px;
     }
+    .searchbox .dummy {
+        background-color: #fff;
+        border-radius: 10px;
+    }
 }
 
 @media all and (min-width:768px) and (max-width:1023px) {
@@ -1199,5 +1212,24 @@ div.logo-wrapper {
     #page3 .socialWrap .share-wrapper {
         margin: 0;
         margin-top: 20px;
+    }
+}
+
+@media all and (min-width:2700px) {
+    div#content-wrapper {
+        position: relative;
+    }
+    div#page1,
+    div#page2,
+    div#page3,
+    div#page4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%)translateY(-50%);
+    }
+    .footer-wrapper {
+        position: relative;
+        z-index: 5;
     }
 }

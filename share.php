@@ -10,7 +10,7 @@ $pid = $_GET["pid"];
 		<meta name="twitter:title" content="Wale playlist generator" />
 		<meta name="twitter:description" content="Create your own Wale playlist generator" />
 		<meta name="twitter:image" content="http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/playlist-share/<?php echo $pid.'.png'?>" />
-		<meta name="twitter:url" content="http://example.com/mypage.html" />
+		<meta name="twitter:url" content="http://staging.weate.ch.stage18.535e.blackmesh.com/wbr/walePlaylist/share.php?pid=<?php echo $pid;?>" />
 
 		<meta property="og:type" content="website" />
 
