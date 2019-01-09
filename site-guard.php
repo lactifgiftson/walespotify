@@ -26,8 +26,6 @@ $domain_stage = "stage18.535e.blackmesh.com";
 
 $valid_credentials = array(
 
-    "preview" => "warnermusic",
-
     "reviewerWEA" => "Turbo777!"
 
 );
